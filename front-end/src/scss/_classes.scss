@@ -1,0 +1,68 @@
+@use 'src/scss/function';
+
+@mixin center($type: 'both') {
+    display: flex;
+
+    @if $type == 'justify' {
+        justify-content: center;
+    }
+
+    @if $type == 'align' {
+        align-items: center;
+    }
+
+    @if $type == 'both' {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin glass-background($type: 'light') {
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    @if $type == 'light' {
+        background-color: var(--white-30);
+    } @else if $type == 'dark' {
+        background-color: var(--black-30);
+    }
+}
+
+@mixin text-ellipsis($limit: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @if ($limit > 1) {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $limit;
+        white-space: unset;
+    }
+}
+
+@mixin submit-btn($color: --black-70) {
+    background-color: var($color);
+    margin-top: function.spacing(1);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.5;
+    height: function.pxToRem(40);
+}
+
+@mixin inside-border-box() {
+    width: 100%;
+    max-height: function.pxToRem(500);
+    overflow: auto;
+    border-radius: var(--radius);
+    padding: function.spacing(1);
+    box-shadow: inset function.spacing(1) function.spacing(1) function.spacing(1) var(--black-70),
+        inset function.spacing(-1) function.spacing(-1) function.spacing(1) var(--black-30);
+}
+
+@mixin search-input() {
+    border: 0;
+    border-radius: function.pxToRem(15);
+    font-size: function.pxToRem(15);
+    @include glass-background('dark');
+}

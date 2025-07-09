@@ -1,0 +1,40 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding-top: function.spacing(1);
+}
+
+.wrapper {
+    padding: function.spacing(1);
+}
+
+.container {
+    h2 {
+        padding-left: function.spacing(1);
+    }
+
+    + .container {
+        margin-top: function.spacing(4);
+    }
+}
+
+.dark-title {
+    color: var(--black);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 20%;
+    padding: function.spacing(1, 0.5);
+}
+
+.active {
+    border: function.pxToRem(2) solid var(--error);
+}

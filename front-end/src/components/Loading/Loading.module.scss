@@ -1,0 +1,44 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    font-size: function.pxToRem(48);
+    display: inline-block;
+    font-weight: bold;
+    color: var(--black);
+    box-sizing: border-box;
+    text-shadow: 0 0 function.pxToRem(2) var(--white), 0 0 function.pxToRem(1) var(--white),
+        0 0 function.pxToRem(1) var(--white);
+    letter-spacing: function.pxToRem(2);
+    position: relative;
+}
+
+.loader::after {
+    content: 'Loading...';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--white);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: animloader 6s linear infinite;
+}
+
+@keyframes animloader {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}

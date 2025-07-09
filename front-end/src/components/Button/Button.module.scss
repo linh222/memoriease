@@ -1,0 +1,45 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    padding: function.spacing(1);
+    height: function.pxToRem(30);
+    color: var(--white);
+    @include classes.center('align');
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+    background: transparent;
+
+    &.disabled {
+        &:hover {
+            cursor: no-drop;
+        }
+        cursor: no-drop;
+        background-color: var(--gray);
+        color: var(--black);
+    }
+
+    &.center {
+        justify-content: center;
+    }
+}
+
+.content + .content {
+    margin-left: function.spacing(1);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.fullsize {
+    width: 100%;
+}
+
+.underline {
+    &:hover {
+        text-decoration: underline;
+        font-style: italic;
+    }
+}

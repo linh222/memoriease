@@ -1,0 +1,41 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+$itemHeight: function.pxToRem(35);
+
+.wrapper,
+.item:hover,
+.active {
+    border-radius: var(--radius);
+}
+
+.wrapper {
+    width: 100%;
+    background-color: var(--black-70);
+    padding: function.spacing(1);
+    height: calc($itemHeight * 5 + function.spacing(1) * 2);
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.item {
+    height: $itemHeight;
+    width: 100%;
+    @include classes.center();
+    cursor: pointer;
+    font-size: function.pxToRem(14);
+
+    &:hover {
+        background-color: var(--white-70);
+    }
+}
+
+.active {
+    background-color: var(--white-30);
+    font-weight: 600;
+    font-size: function.pxToRem(15);
+}

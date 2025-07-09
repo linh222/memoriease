@@ -1,0 +1,71 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.signout-btn {
+    @include classes.submit-btn();
+    width: function.pxToRem(100);
+    position: absolute;
+    top: function.spacing(2);
+    right: function.spacing(2);
+}
+
+.container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: function.pxToRem(500);
+    @include classes.center('align');
+    flex-direction: column;
+
+    h1 {
+        font-size: function.pxToRem(40);
+    }
+}
+
+.form {
+    width: 100%;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: function.spacing(2);
+    transform: translateY(-50%);
+    font-size: function.pxToRem(30);
+}
+
+.input {
+    height: function.pxToRem(60);
+    border-radius: function.pxToRem(30);
+    font-size: function.pxToRem(20);
+    padding-left: function.spacing(8);
+
+    &::placeholder {
+        opacity: 0.6;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: function.spacing(4);
+    width: 100%;
+    gap: function.spacing(5);
+}
+
+.navigate-btn {
+    background-color: var(--black-70);
+    padding: function.spacing(1, 2);
+    font-style: italic;
+    width: 50%;
+    @include classes.center();
+    height: function.pxToRem(60);
+}

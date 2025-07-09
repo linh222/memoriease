@@ -1,0 +1,49 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    @include classes.center();
+}
+
+.login-form {
+    width: function.pxToRem(400);
+    padding: function.spacing(3);
+    padding-bottom: function.spacing(6);
+    border-radius: function.pxToRem(12);
+    @include classes.glass-background();
+    @include classes.center();
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+    border-bottom: function.pxToRem(2) var(--gray) solid;
+    border-right: function.pxToRem(2) var(--gray) solid;
+}
+
+.input-group {
+    margin-bottom: function.spacing(3);
+    width: function.pxToRem(250);
+}
+
+.login-input {
+    height: function.pxToRem(35);
+    width: 100%;
+    background-color: var(--white);
+    color: var(--black);
+
+    &::placeholder {
+        color: var(--black);
+    }
+}
+
+.error-label {
+    color: var(--error);
+    margin-top: function.spacing(1);
+    font-style: italic;
+}
+
+.submit-btn {
+    @include classes.submit-btn();
+    width: function.pxToRem(250);
+    margin-top: 0;
+}

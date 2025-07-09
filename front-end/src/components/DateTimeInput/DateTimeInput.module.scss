@@ -1,0 +1,37 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: relative;
+}
+
+.container {
+    @include classes.center('align');
+}
+
+.from {
+    flex-shrink: 0;
+    margin-right: function.spacing(1);
+}
+
+.to {
+    padding: function.spacing(0, 1);
+}
+
+.calendar-wrapper {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.bottom {
+    top: calc(100% - function.pxToRem(10));
+}
+
+.top {
+    bottom: calc(100% - function.pxToRem(10));
+}

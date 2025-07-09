@@ -1,0 +1,25 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.header {
+    width: 100%;
+    padding: function.spacing(2);
+    @include classes.center('align');
+
+    h1 {
+        margin: 0 auto;
+        padding-left: function.spacing(37.5);
+        font-style: italic;
+    }
+
+    .navigate {
+        display: flex;
+        column-gap: function.spacing(1);
+    }
+
+    .navigate-btn {
+        background-color: var(--black-70);
+        height: function.pxToRem(40);
+        font-style: italic;
+    }
+}

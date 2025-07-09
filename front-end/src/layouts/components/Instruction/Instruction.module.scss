@@ -1,0 +1,38 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 400vh;
+    z-index: 100;
+    padding-top: function.spacing(6);
+    padding-bottom: function.spacing(3);
+
+    @include classes.center('justify');
+    @include classes.glass-background();
+}
+
+.container {
+    width: 80%;
+    @include classes.center('align');
+    flex-direction: column;
+}
+
+.image-wrapper {
+    width: 100%;
+}
+
+.instruction-icon,
+.cancel-icon {
+    cursor: pointer;
+    font-size: function.pxToRem(25);
+}
+
+.cancel-icon {
+    position: absolute;
+    top: function.spacing(2);
+    right: function.spacing(2);
+}

@@ -1,0 +1,47 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    width: calc(100% - var(--nav-width));
+    position: absolute;
+    min-height: calc(70vh);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: function.spacing(2);
+    padding-bottom: function.spacing(2);
+}
+
+.gallery {
+    padding: function.spacing(1, 0.5);
+    @include classes.center('align');
+    position: relative;
+
+    .check-btn {
+        bottom: function.spacing(0.5);
+        color: var(--success);
+    }
+
+    .select-btn {
+        bottom: function.spacing(3.5);
+        color: var(--infor);
+        font-size: function.pxToRem(15);
+    }
+}
+
+.sort-group {
+    position: absolute;
+    top: function.spacing(-6.25);
+    left: function.spacing(6);
+    display: flex;
+    justify-content: flex-end;
+    column-gap: function.spacing(1);
+    padding: function.spacing(0, 2);
+}
+
+.sort-btn {
+    background-color: var(--black-70);
+}

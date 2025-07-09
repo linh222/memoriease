@@ -1,0 +1,98 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+$boxShadow: 0 0 function.pxToRem(4);
+$borderStyle: function.pxToRem(2) solid;
+
+.wrapper {
+    @include classes.center('align');
+    width: 100%;
+}
+
+.inp-label {
+    font-size: function.pxToRem(15);
+    margin-right: function.spacing(1);
+}
+
+.input-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.input-base {
+    font-size: function.pxToRem(14);
+    outline: none;
+    border-radius: var(--radius);
+    padding: function.spacing(0.5, 1);
+    width: 100%;
+    height: function.pxToRem(30);
+    border: $borderStyle var(--white-70);
+    background-color: var(--white-30);
+    color: var(--white);
+
+    &::placeholder {
+        color: var(--white);
+        font-style: italic;
+        position: relative;
+    }
+}
+
+.option-wrapper {
+    background-color: var(--white);
+    margin-top: function.spacing(-1);
+    display: flex;
+    flex-direction: column;
+    width: function.pxToRem(245);
+    border-radius: var(--radius);
+    padding: function.spacing(1, 0);
+    max-height: function.pxToRem(350);
+    overflow-y: auto;
+}
+
+.option {
+    padding: function.spacing(1, 2);
+    cursor: pointer;
+    color: var(--black);
+    font-size: function.pxToRem(13);
+
+    &:hover {
+        background-color: var(--ocean-blue);
+        color: var(--white);
+    }
+}
+
+.textarea {
+    height: function.pxToRem(100);
+    resize: none;
+}
+
+.error-text {
+    margin-top: function.spacing(1);
+    font-style: italic;
+    font-weight: 600;
+    font-size: function.pxToRem(13);
+    color: var(--error);
+    background-color: white;
+    display: block;
+}
+
+.success,
+.error {
+    border-width: function.pxToRem(2);
+    border-style: solid;
+}
+
+.success {
+    border-color: var(--success);
+    &:hover {
+        box-shadow: $boxShadow var(--success);
+    }
+}
+
+.error {
+    border-color: var(--error);
+    &:hover {
+        box-shadow: $boxShadow var(--error);
+    }
+}

@@ -1,0 +1,28 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.container {
+    height: 100%;
+    @include classes.inside-border-box();
+}
+
+.search-inp {
+    margin-top: function.spacing(1);
+    margin-bottom: function.spacing(1);
+    @include classes.search-input();
+}
+
+.submit-btn {
+    @include classes.submit-btn();
+}
+
+.saved-gallery {
+    padding: function.spacing(1, 2);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.saved-gallery-item {
+    width: 50%;
+    padding: function.spacing(1);
+}

@@ -1,0 +1,41 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--nav-width);
+    padding: function.spacing(2);
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+    @include classes.glass-background('dark');
+    @include classes.center('align');
+
+    flex-direction: column;
+    transition: var(--transition-var);
+}
+
+.title {
+    font-style: italic;
+    margin-bottom: function.spacing(5);
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 0;
+    top: function.spacing(4.5);
+    transform: translate(50%, -50%);
+    width: function.pxToRem(25);
+    height: function.pxToRem(25);
+    @include classes.glass-background('dark');
+    @include classes.center();
+    color: var(--white);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    svg {
+        font-size: function.pxToRem(15);
+    }
+}

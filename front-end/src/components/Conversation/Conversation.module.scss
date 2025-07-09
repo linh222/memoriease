@@ -1,0 +1,45 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    width: 100%;
+    display: flex;
+
+    + .wrapper {
+        margin-bottom: function.spacing(4);
+    }
+}
+
+.avatar {
+    width: function.pxToRem(30);
+    height: function.pxToRem(30);
+    border-radius: 50%;
+    background-color: var(--white);
+    flex-shrink: 0;
+    color: var(--black);
+    overflow: hidden;
+    @include classes.center();
+}
+
+.message {
+    font-size: function.pxToRem(15);
+    font-style: italic;
+    margin-left: function.spacing(1);
+    @include classes.glass-background('dark');
+    padding: function.spacing(1.5);
+    margin-right: function.spacing(10);
+    border-radius: function.pxToRem(20);
+
+    + .message {
+        margin-top: function.spacing(0.25);
+    }
+}
+
+.reverse {
+    flex-direction: row-reverse;
+
+    .message {
+        margin-left: function.spacing(10);
+        margin-right: function.spacing(1);
+    }
+}

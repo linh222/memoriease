@@ -1,0 +1,24 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: relative;
+}
+
+.remove-btn {
+    bottom: function.spacing(0.5);
+    color: var(--error);
+}
+
+.saved {
+    &-gallery {
+        padding: function.spacing(1, 2);
+        display: flex;
+        flex-wrap: wrap;
+
+        &-item {
+            width: 25%;
+            padding: function.spacing(1);
+        }
+    }
+}

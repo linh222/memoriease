@@ -1,0 +1,131 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: relative;
+}
+
+.has-information {
+    padding-bottom: function.spacing(6);
+}
+
+.container {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-top: calc(3 / 4 * 100%);
+
+    :hover ~ .overlay-image-alt {
+        display: block;
+    }
+}
+
+.border-image {
+    border: function.pxToRem(4) solid var(--success);
+    box-shadow: var(--box-shadow);
+}
+
+.icon {
+    font-size: function.pxToRem(20);
+    cursor: pointer;
+    color: var(--white);
+
+    + .icon {
+        margin-left: function.spacing(2);
+    }
+}
+
+.submit-icon {
+    flex-grow: 1;
+    @include classes.glass-background('dark');
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    border-radius: var(--radius);
+    @include classes.center();
+}
+
+.overlay-image-alt {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: function.pxToRem(11);
+    @include classes.glass-background('dark');
+    z-index: 1;
+    padding: function.spacing(0.25);
+    text-align: center;
+}
+
+.image {
+    opacity: 1;
+    transition: var(--transition-var);
+    backface-visibility: hidden;
+}
+
+.middle-content,
+.loading {
+    transition: var(--transition-var);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: function.spacing(1);
+    @include classes.center();
+    border-radius: var(--radius);
+    z-index: 1;
+}
+
+.information {
+    padding: function.spacing(1);
+    display: flex;
+    flex-direction: column;
+    font-size: function.pxToRem(13);
+    position: absolute;
+    bottom: 0;
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+
+        &:nth-child(1) {
+            font-size: function.pxToRem(14);
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: function.spacing(0.4);
+        }
+    }
+}
+
+.has-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.spacing {
+    margin: function.spacing(0, 0.2);
+}
+
+.fullsize {
+    width: 100%;
+}
+
+.large {
+    width: 60%;
+}
+
+.middle {
+    width: 50%;
+}
+
+.small {
+    width: 40%;
+}
+
+.extra-small {
+    width: 30%;
+}

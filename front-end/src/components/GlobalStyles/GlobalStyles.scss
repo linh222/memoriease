@@ -1,0 +1,119 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+@import 'normalize.css';
+
+:root {
+    --gray: #e2e2e2;
+    --black: #282828;
+    --violet: #fc00ff;
+    --light-blue: #00dbde;
+    --ocean-blue: #06beb6;
+    --white-30: #ffffff30;
+    --white-20: #ffffff20;
+    --white-70: #ffffff70;
+    --black-30: #00000030;
+    --black-20: #00000020;
+    --black-70: #00000070;
+    --pastel-black: #262525;
+    --warning: #fec260;
+    --white: #fff;
+    --infor: #1976d2;
+    --error: #ff1e1e;
+    --success: #54b435;
+    --purple: #533483;
+
+    --blur: 0.563rem;
+    --radius: 0.25rem;
+
+    --header-height: 3.125rem;
+    --nav-width: 23.75rem;
+
+    --box-shadow: #00000020 0 0.1875rem 0.0625rem -0.125rem, #00000014 0 0.125rem 0.125rem 0,
+        #00000012 0 0.0625rem 0.3125rem 0;
+
+    --transition-var: all 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-rendering: optimizeSpeed;
+    background-image: linear-gradient(-135deg, var(--ocean-blue), #48b1bf);
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    letter-spacing: 0.00938em;
+    color: var(--white);
+
+    &::-webkit-scrollbar-thumb {
+        @include classes.glass-background('dark');
+        border-radius: var(--radius);
+    }
+
+    &::-webkit-scrollbar-track {
+        @include classes.glass-background();
+        border-radius: var(--radius);
+    }
+
+    &::-webkit-scrollbar {
+        width: function.pxToRem(8);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar-wrapper {
+    min-height: 100vh;
+    padding-left: var(--nav-width);
+    transition: var(--transition-var);
+    position: relative;
+    padding-bottom: function.spacing(7);
+}
+
+.hide-nav {
+    &.slide-left-right {
+        transform: translateX(calc(function.pxToRem(16) - var(--nav-width)));
+    }
+
+    ~ .expand {
+        padding-left: function.spacing(2.625);
+
+        > .gallary-wrapper {
+            width: calc(100% - function.spacing(2.625));
+        }
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.label {
+    width: function.pxToRem(95);
+    flex-shrink: 0;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.title {
+    height: var(--header-height);
+    @include classes.center();
+    font-size: function.pxToRem(25);
+    color: var(--black);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.rdrCalendarWrapper {
+    border-radius: var(--radius);
+}

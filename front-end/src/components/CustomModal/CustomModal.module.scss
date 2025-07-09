@@ -1,0 +1,30 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    position: fixed;
+    z-index: 150;
+    @include classes.center();
+    inset: 0;
+}
+
+.container {
+    width: 80vw;
+    height: 80vh;
+    overflow-y: auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+    padding: function.spacing(2, 0);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: function.spacing(3);
+    right: function.spacing(2);
+    color: var(--black);
+    background-color: var(--black-30);
+    height: function.pxToRem(34);
+    width: function.pxToRem(34);
+}

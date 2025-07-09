@@ -1,0 +1,23 @@
+@function spacing($number1: '', $number2: '', $number3: '', $number4: '') {
+    @if type-of($value: $number1) == 'number' {
+        @if type-of($value: $number2) == 'number' {
+            @if type-of($value: $number3) == 'number' {
+                @if type-of($value: $number4) == 'number' {
+                    @return ($number1 * 0.5rem) ($number2 * 0.5rem) ($number3 * 0.5rem) ($number4 * 0.5rem);
+                }
+                @return ($number1 * 0.5rem) ($number2 * 0.5rem) ($number3 * 0.5rem);
+            }
+            @return ($number1 * 0.5rem) ($number2 * 0.5rem);
+        }
+        @return ($number1 * 0.5rem);
+    }
+    @return 0;
+}
+
+@function pxToRem($number) {
+    @if type-of($value: $number) == 'number' {
+        @return $number * 0.0625rem;
+    } @else {
+        @return 0;
+    }
+}

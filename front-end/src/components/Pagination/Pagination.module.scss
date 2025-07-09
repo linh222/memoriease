@@ -1,0 +1,35 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.wrapper {
+    padding: function.spacing(1);
+}
+
+.absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    @include classes.center();
+}
+
+.page {
+    width: function.pxToRem(40);
+    height: function.pxToRem(40);
+    @include classes.center();
+    background-color: var(--black-70);
+    line-height: 1.5;
+
+    + .page {
+        margin-left: function.spacing(1);
+    }
+}
+
+.current-page {
+    background-color: var(--white);
+    color: var(--black);
+}

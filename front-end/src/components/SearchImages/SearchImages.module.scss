@@ -1,0 +1,38 @@
+@use 'src/scss/function';
+@use 'src/scss/classes';
+
+.container {
+    @include classes.inside-border-box();
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    &::-webkit-scrollbar {
+        width: function.pxToRem(0);
+    }
+}
+
+.search-form {
+    position: relative;
+    width: 100%;
+    margin-top: function.spacing(1);
+    @include classes.center('align');
+}
+
+.search-inp {
+    @include classes.search-input();
+}
+
+.send-btn {
+    cursor: pointer;
+    width: function.pxToRem(22);
+    height: function.pxToRem(22);
+    @include classes.center();
+    margin-left: function.spacing(1);
+    background-color: transparent;
+    border: 0;
+}
+
+.submit-btn {
+    @include classes.submit-btn(--warning);
+}

@@ -42,7 +42,7 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/memoriease.git
+git clone https://github.com/linh222/memoriease.git
 cd memoriease
 
 ```
